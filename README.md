@@ -12,9 +12,11 @@ You will also need a Virtual Host setup to match your site.
 
 # Usage
 Place the script and the base_files folder in a location of your choice eg ~/bin/drupal
-Edit the  of the config.sh file to put the correct variables for your location and site in place
+Edit the config.sh file to put the correct variables for your location and site in place
 Then make sure the createDrupalSite.sh script is executable
+
 `chmod +x createDrupal8Site.sh`
+
 and execute like so:
 
 `./createDrupal8Site.sh`
