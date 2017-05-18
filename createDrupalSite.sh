@@ -84,8 +84,8 @@ cp $workingFolder/base_files/gitignore ./.gitignore
 rm example.gitignore
 echo "adding Private Files Path and Trusted Hosts to settings.php file"
 chmod 666 sites/default/settings.php
-echo "\$settings['file_private_path'] = '$privatePath';" >> sites/default/default.settings.php
-echo "\$settings['trusted_host_patterns'] = array('$trustedHosts',);" >> sites/default/default.settings.php 
+echo "\$settings['file_private_path'] = '$privatePath';" >> sites/default/settings.php
+echo "\$settings['trusted_host_patterns'] = array('$trustedHosts',);" >> sites/default/settings.php 
 echo "Updating FixPermissions.sh User and Group"
 sed -i 's/USER/'$apacheUser'/' FixPermissions.sh
 sed -i 's/GROUP/'$apacheGroup'/' FixPermissions.sh
