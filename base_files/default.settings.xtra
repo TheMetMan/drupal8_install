@@ -1,0 +1,13 @@
+#
+# For File Based Site
+#
+$settings['bootstrap_config_storage'] = array(
+  'Drupal\Core\Config\BootstrapConfigStorageFactory',
+  'getFileStorage'
+);
+
+$config_directories = array(
+  CONFIG_ACTIVE_DIRECTORY => './config/active/',
+  CONFIG_STAGING_DIRECTORY => './config/staging/',
+  CONFIG_SYNC_DIRECTORY => './config/sync/',
+);

@@ -1,0 +1,105 @@
+# the .gitignore file
+# taken from 
+# https://drupal.stackexchange.com/questions/193226/gitignore-file-setup-for-acquia-cloud
+# and modified
+#
+# This file contains default .gitignore rules. To use it, copy it to .gitignore,
+# and it will cause files like your settings.php and user-uploaded files to be
+# excluded from Git version control. This is a common strategy to avoid
+# accidentally including private information in public repositories and patch
+# files.
+#
+# Because .gitignore can be specific to your site, this file has a different
+# name; updating Drupal core will not override your custom .gitignore file.
+
+# Needed by Drush CIM Tools
+config/sync-import
+config/active/
+config/sync/
+!config/staging/
+
+# Ignore core and vendor ONLY when managing dependencies with Composer.
+# core
+# vendor
+
+logs/*
+# Ignore configuration files that may contain sensitive information.
+sites/*/*settings*.php
+sites/*/*services*.yml
+sites/*/example*.*
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+sites/*/private
+sites/*/files-private
+
+cache/
+files/
+
+robots.txt
+index.php
+update.php
+web.config
+.csslintrc
+.editorconfig
+.eslintignore
+.eslintrc*
+.gitattributes
+.htaccess
+
+# Ignore SimpleTest multi-site environment.
+sites/simpletest
+
+# If you prefer to store your .gitignore file in the sites/ folder, comment
+# or delete the previous settings and uncomment the following ones, instead.
+
+# Ignore configuration files that may contain sensitive information.
+*/settings*.php
+
+# Ignore paths that contain user-generated content.
+# */files
+# */private
+
+# Ignore SimpleTest multi-site environment.
+simpletest
+
+# Ignore default text files
+/CHANGELOG.txt
+/COPYRIGHT.txt
+/INSTALL*.txt
+/LICENSE.txt
+/MAINTAINERS.txt
+/UPGRADE.txt
+/README.txt
+sites/all/README.txt
+sites/all/modules/README.txt
+sites/all/themes/README.txt
+
+# ------------------------------------------------------------------------------
+# SublimeText files
+# ------------------------------------------------------------------------------
+
+# Workspace settings.
+*.sublime-workspace
+
+# Project settings.
+*.sublime-project
+
+# ------------------------------------------------------------------------------
+# FG Files
+# ------------------------------------------------------------------------------
+FixPermissions.sh
+
+# ------------------------------------------------------------------------------
+# Linux
+# ------------------------------------------------------------------------------
+
+# Tilde files.
+*~
+
+# KDE directory preferences.
+.directory
+
+# Linux trash folder which might appear on any partition or disk.
+.Trash-*
+
