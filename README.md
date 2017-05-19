@@ -7,7 +7,7 @@ This is why we developed this script which will Install a Drupal 8 Site to the l
 
 # Requirements
 This is for Linux Only. We have not considered Windows.
-You will need to have already installed Drush and Git globally and have sudo permissions.
+You will need to have already installed Drush and Git globally.
 You will also need a Virtual Host setup to match your site.
 
 # Usage
@@ -15,10 +15,10 @@ Place the script and the base_files folder in a location of your choice eg ~/bin
 Edit the config.sh file to put the correct variables for your location and site in place
 Then make sure the createDrupalSite.sh script is executable
 
-`chmod +x createDrupal8Site.sh`
+`chmod +x createDrupalSite.sh`
 
 and execute like so:
 
-`./createDrupal8Site.sh`
+`./createDrupalSite.sh`
 
 Wait a little ......

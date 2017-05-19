@@ -31,6 +31,14 @@ askfg(){
         esac
     done
 }       # End of ask()
+#
+clearOldSite(){
+echo "Clearing out the old site be patient ..."
+find $apacheRoot/$siteFolder/ -type d -exec chmod u=rwx,g=rwx,o=rwx '{}' \;
+chmod 666 "$apacheRoot/$siteFolder/sites/default/*"
+rm -fvr $apacheRoot/$siteFolder > /dev/null 2>&1
+}	# end of clearOldSite
+#
 ############ Import Config
 configFile=config.sh
 if [ -e "$configFile" ]; then
@@ -45,7 +53,7 @@ if [ -d "$siteFolder" ]; then
   echo "WARNING!!! you are about to DELETE the existing Site $siteFolder"
   echo "and Install Drupal 8 for File Based Workflow"
   if askfg "Do you really want to continue?"; then
-    sudo rm -fvr $siteFolder > /dev/null 2>&1
+    clearOldSite 
   else
     echo "Quitting Install Drupal 8 for File Based Workflow"
     exit 1
@@ -90,7 +98,7 @@ echo "Updating FixPermissions.sh User and Group"
 sed -i 's/USER/'$apacheUser'/' FixPermissions.sh
 sed -i 's/GROUP/'$apacheGroup'/' FixPermissions.sh
 echo "Fix Permissions on the site... This takes a little while...."
-sudo ./FixPermissions.sh > /dev/null 2>&1
+./FixPermissions.sh > /dev/null 2>&1
 echo "Create git repository and commit"
 git init
 git status
