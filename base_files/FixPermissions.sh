@@ -2,9 +2,6 @@
 #script from Drupal.org site Permissions document
 # https://drupal.org/node/244924
 #
-echo "Setting Permissions and Ownership on this Site. This can take a while ...."
-find $apacheRoot/$siteFolder/ -type d -exec chmod u=rwx,g=rwx,o=rwx '{}' \;
-chmod 666 "$apacheRoot/$siteFolder/sites/default/*"
 chown -Rv USER:GROUP .
 # for local site
 # chown -Rv francis:www-data .

@@ -98,6 +98,8 @@ echo "Updating FixPermissions.sh User and Group"
 sed -i 's/USER/'$apacheUser'/' FixPermissions.sh
 sed -i 's/GROUP/'$apacheGroup'/' FixPermissions.sh
 echo "Fix Permissions on the site... This takes a little while...."
+find "$apacheRoot/$siteFolder/" -type d -exec chmod u=rwx,g=rwx,o=rwx '{}' \;
+chmod 666 "$apacheRoot/$siteFolder/sites/default/*"
 ./FixPermissions.sh > /dev/null 2>&1
 echo "Create git repository and commit"
 git init
