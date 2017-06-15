@@ -13,9 +13,7 @@
 # name; updating Drupal core will not override your custom .gitignore file.
 
 # Needed by Drush CIM Tools
-config/sync-import
-config/active/
-config/sync/
+config/*
 !config/staging/
 
 # Ignore core and vendor ONLY when managing dependencies with Composer.
