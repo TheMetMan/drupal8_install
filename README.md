@@ -23,3 +23,4 @@ and execute like so:
 `./createDrupalSite.sh`
 
 Wait a little ......
+If you get an error showing as "The package has modified files:" when Composer is updating, select 'y' to continue
